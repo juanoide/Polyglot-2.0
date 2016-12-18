@@ -1,0 +1,800 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * PopulateDatabase.xml
+ *
+ * Copyright (C) 2014 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	">
+	
+	<!-- User accounts -->
+
+<!--	<bean id="userAccount0" class="security.UserAccount">
+		<property name="username" value="super" />
+		<property name="password" value="1b3231655cebb7a1f783eddf27d254ca" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+				<bean class="security.Authority">
+					<property name="authority" value="POLYGLOT" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+-->
+		<!-- password: admin	 -->	
+	<bean id="userAccount1" class="security.UserAccount">
+		<property name="username" value="admin" />
+		<property name="password" value="21232f297a57a5a743894a0e4a801fc3" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+			</list>
+		</property>
+			<property name="active" value="true" />
+	</bean>
+
+		<!-- password: polyglot1	 -->	
+	<bean id="userAccount3" class="security.UserAccount">
+		<property name="username" value="polyglot1" />
+		<property name="password" value="d9cd28132198669ae8eee77dfc7beb39" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="POLYGLOT" />
+				</bean>
+			</list>
+		</property>
+			<property name="active" value="true" />
+	</bean>
+
+
+	
+	<!-- password: agent1	 -->	
+	<bean id="userAccount7" class="security.UserAccount">
+		<property name="username" value="Agent1" />
+		<property name="password" value="83a87fd756ab57199c0bb6d5e11168cb" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="AGENT" />
+				</bean>
+			</list>
+		</property>
+			<property name="active" value="true" />
+	</bean>
+	
+	<!-- Fin de useraccount -->	
+	<!--Admins-->
+	
+	<bean id="admin1" class="domain.Administrator">
+		<property name="userAccount" ref="userAccount1"/>
+		<property name="name" value="Jose" />
+		<property name="surname" value="Fernandez" />
+		<property name="email" value="admin1@admins.com" />
+		<property name="phone" value="619683123" />
+		<property name="languages">
+		
+		
+				<list>
+				<ref bean = "Language1" />
+				<ref bean = "Language2" />
+				</list>
+	
+		
+		</property>
+		 <property name="folders">
+	    <list>
+	      <ref bean="folder1" />
+	      <ref bean="folder2" />
+	      <ref bean="folder3" />
+	      <ref bean="folder4" />
+	    </list>
+	  </property>
+		 <property name="searchs">
+	    <list>
+		
+				</list>
+	  
+	  </property>
+	</bean>	
+	
+		
+	
+			<!-- Fin de useraccount -->	
+	<!--Polyglots-->
+	
+	<bean id="polyglot1" class="domain.Polyglot">
+		<property name="userAccount" ref="userAccount3"/>
+		<property name="name" value="Juan Antonio" />
+		<property name="surname" value="Rodriguez" />
+		<property name="email" value="polyglot@polyglot.com" />
+		<property name="phone" value="629683123" />
+		<property name="organiseExchanges">
+			<list>
+			<ref bean ="LanguageExchange1"/>
+			<ref bean ="LanguageExchange2"/>
+			<ref bean ="LanguageExchange3"/>
+			</list>
+		
+		</property>
+		<property name="joinExchanges">
+			<list>
+				
+			
+			
+			</list>
+		
+		
+		</property>
+		  <property name="folders">
+	    <list>
+	      <ref bean="folder9" />
+	      <ref bean="folder10" />
+	      <ref bean="folder11" />
+	      <ref bean="folder12" />
+	    </list>
+	  </property>
+	 <property name="searchs">
+	    <list>
+			
+				</list>
+	  
+	  </property>
+	</bean>	
+			
+		
+	
+		<!-- Fin de useraccount -->	
+		
+		
+	<!--Languages-->	
+	<bean id="Language1" class="domain.Language">
+		<property name="code" value="es" />
+		<property name="administrator" ref="admin1" />
+		<property name="descriptions" >
+				<list>
+				<ref bean = "DescriptionLanguage1" />
+				<ref bean = "DescriptionLanguage3" /> 
+				<ref bean = "DescriptionExchange1" />
+				<ref bean = "DescriptionExchange3" />
+				<ref bean = "DescriptionExchange6" />
+				</list>
+		</property>
+		
+		<property name="descriptionsOwners" >
+				<list>
+			<ref bean = "DescriptionLanguage1" /> 
+			
+				</list>
+		</property>
+			
+		<property name="expectedTalks" >
+				<list>
+				<ref bean = "ExpectedTalk1" />
+				<ref bean = "ExpectedTalk3" />
+				<ref bean = "ExpectedTalk6" />
+				</list>
+		</property>
+	
+	</bean>
+	
+	<bean id="Language2" class="domain.Language">
+		<property name="code" value="en" />
+		<property name="administrator" ref="admin1" />
+		<property name="descriptions" >
+				<list>
+			
+				<ref bean = "DescriptionLanguage4" />
+				<ref bean = "DescriptionExchange2" />
+				<ref bean = "DescriptionExchange4" />
+				<ref bean = "DescriptionExchange7" />
+				</list>
+		</property>
+		
+		<property name="descriptionsOwners" >
+				<list>
+				<ref bean = "DescriptionLanguage3" />
+				<ref bean = "DescriptionLanguage4" />
+				</list>
+		</property>
+		
+		
+		<property name="ExpectedTalks" >
+				<list>
+
+				<ref bean = "ExpectedTalk2" />
+				<ref bean = "ExpectedTalk4" />
+				<ref bean = "ExpectedTalk7" />
+				</list>
+		</property>
+	
+	</bean>
+	
+	
+	<!-- Fin de languages -->	
+	
+	
+		<!--LanguageExchanges-->	
+		<!--Intercambio en Sevilla con idiomas español y en ingles-->	
+		<bean id="LanguageExchange1" class="domain.LanguageExchange">
+		<property name="date" value="10/01/2018 13:30" />
+		<property name="place" value="https://goo.gl/maps/mAELSDgmAj92" />
+		<property name="polyglotOrganise" ref="polyglot1" />
+		<property name="joinExchanges">
+			<list>
+		
+			
+			
+			</list>
+		
+		
+		</property>
+		<property name="Descriptions" >
+				<list>
+				<ref bean = "DescriptionExchange1" />
+				<ref bean = "DescriptionExchange2" />
+				</list>
+		</property>
+			
+		<property name="ExpectedTalks" >
+				<list>
+				<ref bean = "ExpectedTalk1" />
+				<ref bean = "ExpectedTalk2" />
+				</list>
+		</property>
+			<property name="cancel" value="FALSE"   />
+	
+	</bean>
+	
+	
+	<bean id="LanguageExchange2" class="domain.LanguageExchange">
+		<property name="date" value="10/09/2016 13:30" />
+		<property name="place" value="https://goo.gl/maps/MXTKGDiNnKR2" />
+		<property name="polyglotOrganise" ref="polyglot1" />
+		<property name="joinExchanges">
+			<list>
+
+			
+			</list>
+		
+		
+		</property>
+		<property name="Descriptions" >
+				<list>
+				<ref bean = "DescriptionExchange3" />
+				<ref bean = "DescriptionExchange4" />
+				</list>
+		</property>
+			
+		<property name="ExpectedTalks" >
+				<list>
+				<ref bean = "ExpectedTalk3" />
+				<ref bean = "ExpectedTalk4" />
+				</list>
+		</property>
+		<property name="cancel" value="FALSE"   />
+	</bean>
+	
+	
+	<bean id="LanguageExchange3" class="domain.LanguageExchange">
+		<property name="date" value="07/07/2016 13:30" />
+		<property name="place" value="https://goo.gl/maps/L5B7H2ZiWzE2" />
+		<property name="polyglotOrganise" ref="polyglot1" />
+		<property name="joinExchanges">
+			<list>
+			
+			</list>
+		
+		
+		</property>
+		<property name="Descriptions" >
+				<list>
+				<ref bean = "DescriptionExchange6" />
+				<ref bean = "DescriptionExchange7" />
+				</list>
+		</property>
+			
+		<property name="ExpectedTalks" >
+				<list>
+				<ref bean = "ExpectedTalk6" />
+				<ref bean = "ExpectedTalk7" />
+				</list>
+		</property>
+		<property name="cancel" value="FALSE"   />
+	</bean>
+	
+	
+
+	<!-- Fin de languageExchanges -->
+	
+	<!--Descriptions de Language-->
+	
+		
+	<bean id="DescriptionLanguage1" class="domain.Description">
+		<property name="title" value="Descripcion del Español"/>
+		<property name="text" value="El español es el segundo idioma mas hablado del mundo y tiene muchos hablantes" />
+		<property name="links">
+				<list>
+					<value>https://www.blablabla.com</value>
+					<value>https://www.bliblebla.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Español</value>
+					<value>Castellano</value>
+				
+				</list>
+			</property>		
+		<property name="language" ref="Language1"/>
+	</bean>	
+	
+			
+<!--	<bean id="DescriptionLanguage2" class="domain.Description">
+		<property name="title" value="Description of Spanish"/>
+		<property name="text" value="Spanish is the second most spoken language in the world and has many speakers" />
+		<property name="links">
+				<list>
+					<value>https://www.wawawa.com</value>
+					<value>https://www.wawawa.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Spanish</value>
+					<value>Castilian</value>
+					
+				</list>
+			</property>
+		<property name="language" ref="Language2"/>		
+	</bean>	
+	-->
+	<bean id="DescriptionLanguage3" class="domain.Description">
+		<property name="title" value="Descripcion del Ingles"/>
+		<property name="text" value="El ingles es el segundo idioma por antonomasia, en la mayoria del mundo todos lo estudian como segundo idioma y como lengua materna es el tercero más hablado." />
+		<property name="links">
+				<list>
+					<value>https://www.blablabla2.com</value>
+					<value>https://www.bliblebla2.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Ingles</value>
+					<value>Anglosajon</value>
+				
+				</list>
+			</property>		
+			<property name="language" ref="Language1"/>
+	</bean>	
+	
+			
+	<bean id="DescriptionLanguage4" class="domain.Description">
+		<property name="title" value="Description of English"/>
+		<property name="text" value="English is the second language par excellence, in most of the world all studied as a second language and native language is the third most spoken ." />
+		<property name="links">
+				<list>
+					<value>https://www.wawawa2.com</value>
+					<value>https://www.wawawa2.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>English</value>
+					<value>Anglo-Saxon</value>
+					
+				</list>
+			</property>
+		<property name="language" ref="Language2"/>		
+	</bean>	
+	
+	
+	<!-- Fin de Descriptions de Language -->	
+	
+		<!--Descriptions de LanguageExchange-->
+		<bean id="DescriptionExchange1" class="domain.Description">
+		<property name="title" value="Hablemos en Sevilla"/>
+		<property name="text" value="Intercambio de idiomas en la ciudad hispalense, se podrá hablar ingles y español" />
+		<property name="links">
+				<list>
+					<value>https://www.blablablasevilla2.com</value>
+					<value>https://www.blibleblasevilla2.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Sevilla</value>
+					<value>Español-Ingles</value>
+				
+				</list>
+			</property>
+		<property name="language" ref="Language1"/>
+	</bean>	
+	
+	<bean id="DescriptionExchange2" class="domain.Description">
+		<property name="title" value="Let's talk in Seville"/>
+		<property name="text" value="Language Exchange in Seville , you can speak English and Spanish" />
+		<property name="links">
+				<list>
+					<value>https://www.blablablasevilla23.com</value>
+					<value>https://www.blibleblasevilla23.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Seville</value>
+					<value>Spanish-English</value>
+				
+				</list>
+			</property>
+		<property name="language" ref="Language2"/>		
+	</bean>	
+	
+		<bean id="DescriptionExchange3" class="domain.Description">
+		<property name="title" value="Hablemos en roma"/>
+		<property name="text" value="Intercambio en roma de tres idiomas, puedes hablar ingles, español e italiano" />
+		<property name="links">
+				<list>
+					<value>https://www.rome1.com</value>
+					<value>https://www.rome0.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>roma</value>
+					<value>español</value>
+					<value>ingles</value>
+					<value>italiano</value>
+				</list>
+			</property>
+		<property name="language" ref="Language1"/>		
+	</bean>	
+	
+		<bean id="DescriptionExchange4" class="domain.Description">
+		<property name="title" value="Let's talk in Rome"/>
+		<property name="text" value="Roma exchange in three languages, you can speak English, Spanish and Italian" />
+		<property name="links">
+				<list>
+					<value>https://www.roma23.com</value>
+					<value>https://www.rome22.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+						<value>rome</value>
+					<value>spanish</value>
+					<value>english</value>
+					<value>italian</value>
+				
+				</list>
+			</property>
+		<property name="language" ref="Language2"/>		
+	</bean>	
+	
+	
+	<bean id="DescriptionExchange6" class="domain.Description">
+		<property name="title" value="Hablemos en Londres"/>
+		<property name="text" value="Intercambio de idiomas en londres, donde podremos hablar ingles y español" />
+		<property name="links">
+				<list>
+					<value>https://www.londonwaty.com</value>
+					<value>https://www.londwhat.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Londres</value>
+					<value>Español-Ingles</value>
+				</list>
+			</property>	
+		<property name="language" ref="Language1"/>	
+	</bean>	
+	
+
+	<bean id="DescriptionExchange7" class="domain.Description">
+		<property name="title" value="Let's talk in London"/>
+		<property name="text" value="Language Exchange in London, where we can speak English and Spanish" />
+		<property name="links">
+				<list>
+					<value>https://www.londonpowa.com</value>
+					<value>https://www.londonping.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>London</value>
+					<value>Spanish-English</value>
+				</list>
+			</property>
+	<property name="language" ref="Language2"/>		
+	</bean>	
+	
+
+	
+	
+	<!-- Fin de Descriptions de LanguageExchange -->	
+		
+				<!--JoinExchange-->	
+
+	
+		<!-- Fin de JoinExchange -->
+			<!--ExpectedTalk-->	
+	<bean id="ExpectedTalk1" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language1" />
+		<property name="LanguageExchange" ref="LanguageExchange1" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk2" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language2" />
+		<property name="LanguageExchange" ref="LanguageExchange1" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk3" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language1" />
+		<property name="LanguageExchange" ref="LanguageExchange2" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk4" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language2" />
+		<property name="LanguageExchange" ref="LanguageExchange2" />
+		
+	
+	</bean>
+	
+	
+	<bean id="ExpectedTalk6" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language1" />
+		<property name="LanguageExchange" ref="LanguageExchange3" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk7" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language2" />
+		<property name="LanguageExchange" ref="LanguageExchange3" />
+		
+	
+	</bean>
+	
+	
+	
+		<!-- Fin de ExpectedTalk -->
+	
+	<!-- Inicio del 1.0b -->
+	
+		<!-- Inicio de los agent-->
+	<bean id="agent1" class="domain.Agent">
+		<property name="userAccount" ref="userAccount7"/>
+		<property name="name" value="Javier" />
+		<property name="surname" value="Gutierres" />
+		<property name="email" value="agent1@agents.com" />
+		<property name="phone" value="610683123" />
+		<property name="sponsorships">
+		
+		
+				<list>
+				
+				</list>
+	
+		
+		</property>
+		   <property name="folders">
+	    <list>
+	      <ref bean="folder25" />
+	      <ref bean="folder26" />
+	      <ref bean="folder27" />
+	      <ref bean="folder28" />
+	    </list>
+	  </property>
+	   <property name="searchs">
+	    <list>
+			
+				</list>
+	  
+	  </property>
+	</bean>	
+	
+		<!-- Fin de los agent-->
+		
+	
+	<!-- Folders -->	
+	<bean id="folder1" class="domain.Folder">
+		<property name="name" value="In box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="admin1" />
+		<property name="messages">
+		  <list>
+			
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder2" class="domain.Folder">
+		<property name="name" value="Out box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="admin1" />
+		<property name="messages">
+		  <list>
+		
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder3" class="domain.Folder">
+		<property name="name" value="Trash box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="admin1" />
+		<property name="messages">
+		  <list>
+		
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder4" class="domain.Folder">
+		<property name="name" value="Spam box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="admin1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	
+
+	
+	<bean id="folder9" class="domain.Folder">
+		<property name="name" value="In box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="polyglot1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder10" class="domain.Folder">
+		<property name="name" value="Out box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="polyglot1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder11" class="domain.Folder">
+		<property name="name" value="Trash box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="polyglot1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder12" class="domain.Folder">
+		<property name="name" value="Spam box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="polyglot1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>
+	
+
+	
+	<bean id="folder25" class="domain.Folder">
+		<property name="name" value="In box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="agent1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder26" class="domain.Folder">
+		<property name="name" value="Out box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="agent1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder27" class="domain.Folder">
+		<property name="name" value="Trash box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="agent1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder28" class="domain.Folder">
+		<property name="name" value="Spam box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="agent1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>
+
+
+
+	<bean id="folder37" class="domain.Folder">
+		<property name="name" value="LanguageExchange1" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="polyglot1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>
+		<property name="languageExchange" ref="LanguageExchange1" />
+	</bean>
+
+	
+	<bean id="folder47" class="domain.Folder">
+		<property name="name" value="LanguageExchange2" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="polyglot1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>
+		<property name="languageExchange" ref="LanguageExchange2" />
+	</bean>
+	
+	<bean id="folder48" class="domain.Folder">
+		<property name="name" value="LanguageExchange3" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="polyglot1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>
+		<property name="languageExchange" ref="LanguageExchange3" />
+	</bean>
+	
+	
+
+	
+
+	
+		<!-- Fin de los folders -->
+		<!-- Inicio de los message -->
+			
+		
+		<!-- Fin de los message -->
+			<!-- Inicio de los sponsorship-->
+
+	
+		<!-- Fin de los sponsorship-->
+			<!-- Inicio de las description de sponsorship-->
+			
+	<!-- Fin de las description de sponsorship-->
+	
+	<!-- Inicio de los banner-->
+			
+			
+		<!-- Fin de los banner-->
+		
+				
+				
+</beans>

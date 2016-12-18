@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+
+	<definition name="description/list" extends="master.page">	
+		<put-attribute name="title" value="List of Description" />
+		<put-attribute name="body" value="/views/description/list.jsp" />
+	</definition>
+	
+	<definition name="description/languageExchange" extends="master.page">	
+		<put-attribute name="title" value="Description of LanguageExchange" />
+		<put-attribute name="body" value="/views/description/list.jsp" />
+	</definition>
+
+	<definition name="description/languageExchange/polyglot" extends="master.page">	
+		<put-attribute name="title" value="Description of LanguageExchange" />
+		<put-attribute name="body" value="/views/description/list.jsp" />
+	</definition>
+	
+	<definition name="description/languageExchange/polyglot/edit" extends="master.page">	
+		<put-attribute name="title" value="Edit Description" />
+		<put-attribute name="body" value="/views/description/editDescriptionLanguageExchange.jsp" />
+	</definition>
+
+	<definition name="description/language/admin" extends="master.page">	
+		<put-attribute name="title" value="Description of Language" />
+		<put-attribute name="body" value="/views/description/list.jsp" />
+	</definition>
+	
+	
+	<definition name="description/language/admin/edit" extends="master.page">	
+		<put-attribute name="title" value="Edit Description" />
+		<put-attribute name="body" value="/views/description/editDescriptionLanguage.jsp" />
+	</definition>
+	
+	
+	<definition name="description/sponsorship/agent" extends="master.page">	
+		<put-attribute name="title" value="Description of Sponsorship" />
+		<put-attribute name="body" value="/views/description/list.jsp" />
+	</definition>
+	
+	
+	<definition name="description/sponsorship/agent/edit" extends="master.page">	
+		<put-attribute name="title" value="Edit Description" />
+		<put-attribute name="body" value="/views/description/editDescriptionSponsorship.jsp" />
+	</definition>
+	
+
+</tiles-definitions>

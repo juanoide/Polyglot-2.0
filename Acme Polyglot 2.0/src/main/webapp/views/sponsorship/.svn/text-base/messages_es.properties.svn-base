@@ -1,0 +1,26 @@
+# messages_es.properties
+#
+# Copyright (C) 2014 Universidad de Sevilla
+# 
+# The use of this project is hereby constrained to the conditions of the 
+# TDG Licence, a copy of which you may download from 
+# http://www.tdg-seville.info/License.html
+
+shop.location	=	Ubicación
+shop.address	=	Dirección
+shop.latitude	=	Latitud
+shop.longitude	=	Longitud
+shop.altitude	=	Altitud
+shop.edit		=	Editar
+return		=	Atrás
+save		=	Guardar
+delete		=	Borrar
+
+carType.makerName	=	Nombre del fabricante
+carType.model	=	Modelo
+carType.rentalPrice	=	Precio
+carType.shops	=	Ver tiendas
+
+shop.register.commit.error	=	No se pudo guardar la operación
+shop.delete.commit.error	=	No se pudo eliminar la tienda
+shop.edit.commit.error		=	No se pudo editar la tienda

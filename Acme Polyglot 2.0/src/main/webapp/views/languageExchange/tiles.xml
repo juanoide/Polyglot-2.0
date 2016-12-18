@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- 
+ * tiles.xml
+ *
+ * Copyright (C) 2014 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+
+	<definition name="languageExchange/polyglot/register" extends="master.page">	
+		<put-attribute name="title" value="Exchange Register" />
+		<put-attribute name="body" value="/views/languageExchange/register.jsp" />
+	</definition>
+	
+	<definition name="languageExchange/future3months/list" extends="master.page">	
+		<put-attribute name="title" value="Future 3 months" />
+		<put-attribute name="body" value="/views/languageExchange/list.jsp" />
+	</definition>
+	
+	<definition name="languageExchange/past3months/list" extends="master.page">	
+		<put-attribute name="title" value="Past 3 months" />
+		<put-attribute name="body" value="/views/languageExchange/list.jsp" />
+	</definition>
+	
+	<definition name="languageExchange/polyglot/future3months/list" extends="master.page">	
+		<put-attribute name="title" value="Future 3 months" />
+		<put-attribute name="body" value="/views/languageExchange/list.jsp" />
+	</definition>
+	
+	<definition name="languageExchange/polyglot/past3months/list" extends="master.page">	
+		<put-attribute name="title" value="Past 3 months" />
+		<put-attribute name="body" value="/views/languageExchange/list.jsp" />
+	</definition>
+	
+	<definition name="languageExchange/polyglot/list" extends="master.page">	
+		<put-attribute name="title" value="All LanguageExchange" />
+		<put-attribute name="body" value="/views/languageExchange/list.jsp" />
+	</definition>
+	
+	<definition name="languageExchange/list" extends="master.page">	
+		<put-attribute name="title" value="All LanguageExchange" />
+		<put-attribute name="body" value="/views/languageExchange/list.jsp" />
+	</definition>
+	
+	<definition name="languageExchange/electionLanguage" extends="master.page">	
+		<put-attribute name="title" value="Choose your language" />
+		<put-attribute name="body" value="/views/languageExchange/electionLanguage.jsp" />
+	</definition>
+	
+	<definition name="languageExchange/polyglot/joined/list" extends="master.page">	
+		<put-attribute name="title" value="Joined LanguageExchange" />
+		<put-attribute name="body" value="/views/languageExchange/list.jsp" />
+	</definition>
+	
+	<definition name="languageExchange/polyglot/addDescription" extends="master.page">	
+		<put-attribute name="title" value="Add Description" />
+		<put-attribute name="body" value="/views/languageExchange/addDescription.jsp" />
+	</definition>
+	
+	
+	<definition name="languageExchange/polyglot/edit" extends="master.page">	
+		<put-attribute name="title" value="Edit Language Exchange" />
+		<put-attribute name="body" value="/views/languageExchange/edit.jsp" />
+	</definition>
+	
+</tiles-definitions>

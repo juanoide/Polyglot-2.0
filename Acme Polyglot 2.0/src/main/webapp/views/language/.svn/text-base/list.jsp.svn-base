@@ -1,0 +1,70 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+<%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@taglib prefix="tiles" uri="http://tiles.apache.org/tags-tiles"%>
+<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
+<%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="security"	uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="display" uri="http://displaytag.sf.net"%>
+<%@ taglib prefix="acme" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+
+<display:table name="shops" id="row" requestURI="${requestURI}" pagesize="5" class="displaytag">
+	
+	<spring:message code="shop.address" var="address"/>
+	<display:column property="address" title="${address}" sortable="true"/>
+	
+	<spring:message code="shop.latitude" var="latitude"/>
+	<display:column property="gpsCoordinates.latitude" title="${latitude}" sortable="true"/>
+	
+	<spring:message code="shop.longitude" var="longitude"/>
+	<display:column property="gpsCoordinates.longitude" title="${longitude}" sortable="true"/>
+	
+	<spring:message code="shop.altitude" var="altitude"/>
+	<display:column property="gpsCoordinates.altitude" title="${altitude}" sortable="true"/>
+
+	<security:authorize access="isAnonymous()">
+		<display:column>
+			<jstl:if test="${!carTypeService.findCarTypeByShop(row.id).isEmpty()}">
+				<a href="shop/carTypeList.do?shopId=${row.id}"><spring:message code="shop.carTypes"/></a>
+			</jstl:if>
+		</display:column>
+	</security:authorize>
+	
+	<security:authorize access="hasRole('CUSTOMER')">
+		<display:column>
+			<jstl:if test="${!carTypeService.findCarTypeByShop(row.id).isEmpty()}">
+				<a href="shop/customer/carTypeList.do?shopId=${row.id}"><spring:message code="shop.carTypes"/></a>
+			</jstl:if>
+		</display:column>
+	</security:authorize>
+	
+	<security:authorize access="hasRole('CLERK')">
+		<display:column>
+			<jstl:if test="${!carTypeService.findCarTypeByShop(row.id).isEmpty()}">
+				<a href="shop/clerk/carTypeList.do?shopId=${row.id}"><spring:message code="shop.carTypes"/></a>
+			</jstl:if>
+		</display:column>
+	</security:authorize>
+	
+	<security:authorize access="hasRole('ADMIN')">
+		<display:column>
+			<jstl:if test="${!carTypeService.findCarTypeByShop(row.id).isEmpty()}">
+				<a href="shop/administrator/carTypeList.do?shopId=${row.id}"><spring:message code="shop.carTypes"/></a>
+			</jstl:if>
+		</display:column>
+	</security:authorize>
+	
+	<security:authorize access="hasRole('ADMIN')">
+		<display:column>
+			<a href="shop/administrator/edit.do?shopId=${row.id}"><spring:message code="shop.edit"/></a>
+		</display:column>
+	</security:authorize>
+	
+</display:table>
+
+<input type="button" name="cancel" value="<spring:message code="return"/>" 
+		onclick="javascript: window.location.replace('')"/>
+<br /> 

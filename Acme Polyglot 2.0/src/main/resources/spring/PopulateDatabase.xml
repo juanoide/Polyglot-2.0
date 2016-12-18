@@ -1,0 +1,2175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+ * PopulateDatabase.xml
+ *
+ * Copyright (C) 2014 Universidad de Sevilla
+ * 
+ * The use of this project is hereby constrained to the conditions of the 
+ * TDG Licence, a copy of which you may download from 
+ * http://www.tdg-seville.info/License.html
+ -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	">
+	
+	<!-- User accounts -->
+
+<!--	<bean id="userAccount0" class="security.UserAccount">
+		<property name="username" value="super" />
+		<property name="password" value="1b3231655cebb7a1f783eddf27d254ca" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+				<bean class="security.Authority">
+					<property name="authority" value="POLYGLOT" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+-->
+		<!-- password: admin	 -->	
+	<bean id="userAccount1" class="security.UserAccount">
+		<property name="username" value="admin" />
+		<property name="password" value="21232f297a57a5a743894a0e4a801fc3" />
+		
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+			</list>
+		</property>
+	
+	</bean>
+			<!-- password: admin2	 -->	
+	<bean id="userAccount2" class="security.UserAccount">
+		<property name="username" value="admin2" />
+		<property name="password" value="c84258e9c39059a89ab77d846ddab909" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="ADMIN" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+		<!-- password: polyglot1	 -->	
+	<bean id="userAccount3" class="security.UserAccount">
+		<property name="username" value="polyglot1" />
+		<property name="password" value="d9cd28132198669ae8eee77dfc7beb39" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="POLYGLOT" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+
+
+		<!-- password: polyglot2	 -->	
+	<bean id="userAccount4" class="security.UserAccount">
+		<property name="username" value="polyglot2" />
+		<property name="password" value="a4e8bc2431a2e9e0e1c485e953021164" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="POLYGLOT" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- password: polyglot3	 -->	
+	<bean id="userAccount5" class="security.UserAccount">
+		<property name="username" value="polyglot3" />
+		<property name="password" value="9f4d563b32e397143a13767df6da2832" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="POLYGLOT" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<!-- password: polyglot4	 -->	
+	<bean id="userAccount6" class="security.UserAccount">
+		<property name="username" value="polyglot4" />
+		<property name="password" value="3c4fd79d2d4cdf2b0bb70a1697847720" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="POLYGLOT" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<!-- password: agent1	 -->	
+	<bean id="userAccount7" class="security.UserAccount">
+		<property name="username" value="Agent1" />
+		<property name="password" value="83a87fd756ab57199c0bb6d5e11168cb" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="AGENT" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<!-- password: agent2	 -->	
+	<bean id="userAccount8" class="security.UserAccount">
+		<property name="username" value="Agent2" />
+		<property name="password" value="b1a4a6b01cc297d4677c4ca6656e14d7" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="AGENT" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	<!-- password: agent3	 -->	
+	<bean id="userAccount9" class="security.UserAccount">
+		<property name="username" value="Agent3" />
+		<property name="password" value="6f097a447415dd5030d579a9051165f0" />
+		<property name="authorities">
+			<list>
+				<bean class="security.Authority">
+					<property name="authority" value="AGENT" />
+				</bean>
+			</list>
+		</property>
+	</bean>
+	
+	<!-- Fin de useraccount -->	
+	<!--Admins-->
+	
+	<bean id="admin1" class="domain.Administrator">
+		<property name="userAccount" ref="userAccount1"/>
+		<property name="name" value="Jose" />
+		<property name="surname" value="Fernandez" />
+		<property name="email" value="admin1@admins.com" />
+		<property name="phone" value="619683123" />
+		<property name="languages">
+		
+		
+				<list>
+				<ref bean = "Language1" />
+				<ref bean = "Language2" />
+				</list>
+	
+		
+		</property>
+		 <property name="folders">
+	    <list>
+	      <ref bean="folder1" />
+	      <ref bean="folder2" />
+	      <ref bean="folder3" />
+	      <ref bean="folder4" />
+	    </list>
+	  </property>
+		
+	</bean>	
+	
+		
+	<bean id="admin2" class="domain.Administrator">
+		<property name="userAccount" ref="userAccount2"/>
+		<property name="name" value="Federico" />
+		<property name="surname" value="Fernandez" />
+		<property name="email" value="admin2@admins.com" />
+		<property name="phone" value="619680123" />
+		  <property name="folders">
+	    <list>
+	      <ref bean="folder5" />
+	      <ref bean="folder6" />
+	      <ref bean="folder7" />
+	      <ref bean="folder8" />
+	    </list>
+	  </property>
+	</bean>	
+	
+			<!-- Fin de useraccount -->	
+	<!--Polyglots-->
+	
+	<bean id="polyglot1" class="domain.Polyglot">
+		<property name="userAccount" ref="userAccount3"/>
+		<property name="name" value="Juan Antonio" />
+		<property name="surname" value="Rodriguez" />
+		<property name="email" value="polyglot@polyglot.com" />
+		<property name="phone" value="629683123" />
+		<property name="organiseExchanges">
+			<list>
+			<ref bean ="LanguageExchange1"/>
+			<ref bean ="LanguageExchange2"/>
+			<ref bean ="LanguageExchange3"/>
+			</list>
+		
+		</property>
+		<property name="joinExchanges">
+			<list>
+			<ref bean= "JoinExchange1"/>
+			<ref bean= "JoinExchange9"/>
+			
+			
+			
+			</list>
+		
+		
+		</property>
+		  <property name="folders">
+	    <list>
+	      <ref bean="folder9" />
+	      <ref bean="folder10" />
+	      <ref bean="folder11" />
+	      <ref bean="folder12" />
+	    </list>
+	  </property>
+	
+	</bean>	
+			
+		
+	
+	
+	<bean id="polyglot2" class="domain.Polyglot">
+		<property name="userAccount" ref="userAccount4"/>
+		<property name="name" value="Manuel" />
+		<property name="surname" value="Diaz" />
+		<property name="email" value="manuel@polyglot.com" />
+		<property name="phone" value="629200123" />
+		
+			<property name="joinExchanges">
+			<list>
+			<ref bean= "JoinExchange2"/>
+			<ref bean= "JoinExchange3"/>
+			<ref bean= "JoinExchange6"/>			
+			<ref bean= "JoinExchange10"/>			
+			</list>
+		
+		
+		</property>
+		 <property name="folders">
+	    <list>
+	      <ref bean="folder13" />
+	      <ref bean="folder14" />
+	      <ref bean="folder15" />
+	      <ref bean="folder16" />
+	    </list>
+	  </property>
+	</bean>	
+	
+	<bean id="polyglot3" class="domain.Polyglot">
+		<property name="userAccount" ref="userAccount5"/>
+		<property name="name" value="Rocio" />
+		<property name="surname" value="Martinez" />
+		<property name="email" value="rocio@polyglot.com" />
+		<property name="phone" value="629223123" />
+		<property name="organiseExchanges">
+			<list>
+			<ref bean ="LanguageExchange5"/>
+			
+			</list>
+		</property>
+		
+		
+		<property name="joinExchanges">
+			<list>
+			<ref bean= "JoinExchange4"/>
+			<ref bean= "JoinExchange7"/>
+			<ref bean= "JoinExchange8"/>			
+			
+			</list>
+		
+		
+		</property>
+		
+		<property name="folders">
+	    <list>
+	      <ref bean="folder17" />
+	      <ref bean="folder18" />
+	      <ref bean="folder19" />
+	      <ref bean="folder20" />
+	    </list>
+	  </property>
+		
+	</bean>	
+	
+	<bean id="polyglot4" class="domain.Polyglot">
+		<property name="userAccount" ref="userAccount6"/>
+		<property name="name" value="Laura" />
+		<property name="surname" value="Pausini" />
+		<property name="email" value="laura@polyglot.com" />
+		<property name="phone" value="629220000" />
+		
+		<property name="organiseExchanges">
+			<list>
+			<ref bean ="LanguageExchange4"/>
+			
+			</list>
+		</property>
+		<property name="joinExchanges">
+			<list>
+			<ref bean= "JoinExchange5"/>
+			
+			
+			
+			</list>
+		
+		
+		</property>
+		 <property name="folders">
+	    <list>
+	      <ref bean="folder21" />
+	      <ref bean="folder22" />
+	      <ref bean="folder23" />
+	      <ref bean="folder24" />
+	    </list>
+	  </property>
+	</bean>	
+	
+		<!-- Fin de useraccount -->	
+		
+		
+	<!--Languages-->	
+	<bean id="Language1" class="domain.Language">
+		<property name="code" value="es" />
+		<property name="administrator" ref="admin1" />
+		<property name="descriptions" >
+				<list>
+				<ref bean = "DescriptionLanguage1" />
+				<ref bean = "DescriptionLanguage3" />
+				<ref bean = "DescriptionLanguage5" />
+				<ref bean = "DescriptionLanguage8" />
+				<ref bean = "DescriptionLanguage9" />
+				<ref bean = "DescriptionExchange1" />
+				<ref bean = "DescriptionExchange3" />
+				<ref bean = "DescriptionExchange6" />
+				<ref bean = "DescriptionExchange10" />
+				</list>
+		</property>
+		
+		<property name="descriptionsOwners" >
+				<list>
+			<ref bean = "DescriptionLanguage1" /> 
+	<!--	<ref bean = "DescriptionLanguage2" />  -->	
+				</list>
+		</property>
+			
+		<property name="expectedTalks" >
+				<list>
+				<ref bean = "ExpectedTalk1" />
+				<ref bean = "ExpectedTalk3" />
+				<ref bean = "ExpectedTalk6" />
+				<ref bean = "ExpectedTalk11" />
+				</list>
+		</property>
+	
+	</bean>
+	
+	<bean id="Language2" class="domain.Language">
+		<property name="code" value="en" />
+		<property name="administrator" ref="admin1" />
+		<property name="descriptions" >
+				<list>
+			<!--	<ref bean = "DescriptionLanguage2" /> -->
+				<ref bean = "DescriptionLanguage4" />
+				<ref bean = "DescriptionLanguage6" />
+				<ref bean = "DescriptionExchange2" />
+				<ref bean = "DescriptionExchange4" />
+				<ref bean = "DescriptionExchange7" />
+				<ref bean = "DescriptionExchange8" />
+				</list>
+		</property>
+		
+		<property name="descriptionsOwners" >
+				<list>
+				<ref bean = "DescriptionLanguage3" />
+				<ref bean = "DescriptionLanguage4" />
+				</list>
+		</property>
+		
+		
+		<property name="ExpectedTalks" >
+				<list>
+
+				<ref bean = "ExpectedTalk2" />
+				<ref bean = "ExpectedTalk4" />
+				<ref bean = "ExpectedTalk7" />
+				<ref bean = "ExpectedTalk8" />
+				</list>
+		</property>
+	
+	</bean>
+	
+	<bean id="Language3" class="domain.Language">
+		<property name="code" value="it" />
+		<property name="administrator" ref="admin1" />
+		
+				<property name="descriptions" >
+				<list>
+				<ref bean = "DescriptionLanguage7" />
+				<ref bean = "DescriptionExchange5" />
+				<ref bean = "DescriptionExchange9" />
+				</list>
+		</property>
+		
+		<property name="descriptionsOwners" >
+				<list>
+				<ref bean = "DescriptionLanguage5" />
+				<ref bean = "DescriptionLanguage6" />
+				<ref bean = "DescriptionLanguage7" />
+				</list>
+		</property>
+		
+		
+		<property name="ExpectedTalks" >
+				<list>
+
+				<ref bean = "ExpectedTalk5" />
+				<ref bean = "ExpectedTalk9" />
+				</list>
+		</property>
+	
+	</bean>
+	
+	
+	<bean id="Language4" class="domain.Language">
+		<property name="code" value="de" />
+		<property name="administrator" ref="admin1" />
+		<property name="descriptions" >
+				<list>
+
+				</list>
+		</property>
+		
+		<property name="descriptionsOwners" >
+				<list>
+		<ref bean = "DescriptionLanguage8" />
+				</list>
+		</property>
+		
+		
+
+		
+		<property name="ExpectedTalks" >
+				<list>
+			<ref bean = "ExpectedTalk10" />
+			
+				</list>
+		</property>
+	
+	</bean>
+	
+	<bean id="Language5" class="domain.Language">
+		<property name="code" value="pl" />
+		<property name="administrator" ref="admin1" />
+		<property name="descriptions" >
+				<list>
+
+				</list>
+		</property>
+		
+		<property name="descriptionsOwners" >
+				<list>
+		<ref bean = "DescriptionLanguage9" />
+				</list>
+		</property>
+		
+		
+
+		
+		<property name="ExpectedTalks" >
+				<list>
+	
+			
+				</list>
+		</property>
+	
+	</bean>
+	
+	<!-- Fin de languages -->	
+	
+	
+		<!--LanguageExchanges-->	
+		<!--Intercambio en Sevilla con idiomas español y en ingles-->	
+		<bean id="LanguageExchange1" class="domain.LanguageExchange">
+		<property name="date" value="10/01/2018 13:30" />
+		<property name="place" value="https://goo.gl/maps/mAELSDgmAj92" />
+		<property name="polyglotOrganise" ref="polyglot1" />
+		<property name="joinExchanges">
+			<list>
+			<ref bean= "JoinExchange1"/>
+			<ref bean= "JoinExchange2"/>
+			
+			
+			</list>
+		
+		
+		</property>
+		<property name="Descriptions" >
+				<list>
+				<ref bean = "DescriptionExchange1" />
+				<ref bean = "DescriptionExchange2" />
+				</list>
+		</property>
+			
+		<property name="ExpectedTalks" >
+				<list>
+				<ref bean = "ExpectedTalk1" />
+				<ref bean = "ExpectedTalk2" />
+				</list>
+		</property>
+			<property name="cancel" value="FALSE"   />
+	
+	</bean>
+	
+	
+	<bean id="LanguageExchange2" class="domain.LanguageExchange">
+		<property name="date" value="10/09/2016 13:30" />
+		<property name="place" value="https://goo.gl/maps/MXTKGDiNnKR2" />
+		<property name="polyglotOrganise" ref="polyglot1" />
+		<property name="joinExchanges">
+			<list>
+			<ref bean= "JoinExchange3"/>
+			<ref bean= "JoinExchange4"/>
+			<ref bean= "JoinExchange5"/>
+			
+			</list>
+		
+		
+		</property>
+		<property name="Descriptions" >
+				<list>
+				<ref bean = "DescriptionExchange3" />
+				<ref bean = "DescriptionExchange4" />
+				<ref bean = "DescriptionExchange5" />
+				</list>
+		</property>
+			
+		<property name="ExpectedTalks" >
+				<list>
+				<ref bean = "ExpectedTalk3" />
+				<ref bean = "ExpectedTalk4" />
+				<ref bean = "ExpectedTalk5" />
+				</list>
+		</property>
+		<property name="cancel" value="FALSE"   />
+	</bean>
+	
+	
+	<bean id="LanguageExchange3" class="domain.LanguageExchange">
+		<property name="date" value="05/07/2016 13:30" />
+		<property name="place" value="https://goo.gl/maps/L5B7H2ZiWzE2" />
+		<property name="polyglotOrganise" ref="polyglot1" />
+		<property name="joinExchanges">
+			<list>
+			<ref bean= "JoinExchange6"/>
+			<ref bean= "JoinExchange7"/>
+			
+			</list>
+		
+		
+		</property>
+		<property name="Descriptions" >
+				<list>
+				<ref bean = "DescriptionExchange6" />
+				<ref bean = "DescriptionExchange7" />
+				</list>
+		</property>
+			
+		<property name="ExpectedTalks" >
+				<list>
+				<ref bean = "ExpectedTalk6" />
+				<ref bean = "ExpectedTalk7" />
+				</list>
+		</property>
+		<property name="cancel" value="FALSE"   />
+	</bean>
+	
+	
+	<bean id="LanguageExchange4" class="domain.LanguageExchange">
+		<property name="date" value="02/20/2013 13:30" />
+		<property name="place" value="https://goo.gl/maps/L5B7H2ZiWzE2" />
+		<property name="polyglotOrganise" ref="polyglot4" />
+		<property name="joinExchanges">
+			<list>
+			<ref bean= "JoinExchange8"/>
+
+			</list>
+		
+		
+		</property>
+		<property name="Descriptions" >
+				<list>
+				<ref bean = "DescriptionExchange8" />
+				<ref bean = "DescriptionExchange9" />
+				</list>
+		</property>
+			
+		<property name="ExpectedTalks" >
+				<list>
+				<ref bean = "ExpectedTalk8" />
+				<ref bean = "ExpectedTalk9" />
+				</list>
+		</property>
+		<property name="cancel" value="FALSE"   />
+	</bean>
+	
+	<bean id="LanguageExchange5" class="domain.LanguageExchange">
+		<property name="date" value="07/07/2016 15:30" />
+		<property name="place" value="https://goo.gl/maps/WHZZ16k3aWS2" />
+		<property name="polyglotOrganise" ref="polyglot3" />
+		<property name="joinExchanges">
+			<list>
+			<ref bean= "JoinExchange9"/>
+			<ref bean= "JoinExchange10"/>
+			
+			</list>
+		
+		
+		</property>
+		<property name="Descriptions" >
+				<list>
+				<ref bean = "DescriptionExchange10" />
+				</list>
+		</property>
+			
+		<property name="ExpectedTalks" >
+				<list>
+				<ref bean = "ExpectedTalk10" />
+				<ref bean = "ExpectedTalk11" />
+				</list>
+		</property>
+		<property name="cancel" value="FALSE"   />
+	</bean>
+	
+
+	<!-- Fin de languageExchanges -->
+	
+	<!--Descriptions de Language-->
+	
+		
+	<bean id="DescriptionLanguage1" class="domain.Description">
+		<property name="title" value="Descripcion del Español"/>
+		<property name="text" value="El español es el segundo idioma mas hablado del mundo y tiene muchos hablantes" />
+		<property name="links">
+				<list>
+					<value>https://www.blablabla.com</value>
+					<value>https://www.bliblebla.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Español</value>
+					<value>Castellano</value>
+				
+				</list>
+			</property>		
+		<property name="language" ref="Language1"/>
+	</bean>	
+	
+			
+<!--	<bean id="DescriptionLanguage2" class="domain.Description">
+		<property name="title" value="Description of Spanish"/>
+		<property name="text" value="Spanish is the second most spoken language in the world and has many speakers" />
+		<property name="links">
+				<list>
+					<value>https://www.wawawa.com</value>
+					<value>https://www.wawawa.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Spanish</value>
+					<value>Castilian</value>
+					
+				</list>
+			</property>
+		<property name="language" ref="Language2"/>		
+	</bean>	
+	-->
+	<bean id="DescriptionLanguage3" class="domain.Description">
+		<property name="title" value="Descripcion del Ingles"/>
+		<property name="text" value="El ingles es el segundo idioma por antonomasia, en la mayoria del mundo todos lo estudian como segundo idioma y como lengua materna es el tercero más hablado." />
+		<property name="links">
+				<list>
+					<value>https://www.blablabla2.com</value>
+					<value>https://www.bliblebla2.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Ingles</value>
+					<value>Anglosajon</value>
+				
+				</list>
+			</property>		
+			<property name="language" ref="Language1"/>
+	</bean>	
+	
+			
+	<bean id="DescriptionLanguage4" class="domain.Description">
+		<property name="title" value="Description of English"/>
+		<property name="text" value="English is the second language par excellence, in most of the world all studied as a second language and native language is the third most spoken ." />
+		<property name="links">
+				<list>
+					<value>https://www.wawawa2.com</value>
+					<value>https://www.wawawa2.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>English</value>
+					<value>Anglo-Saxon</value>
+					
+				</list>
+			</property>
+		<property name="language" ref="Language2"/>		
+	</bean>	
+	
+	<bean id="DescriptionLanguage5" class="domain.Description">
+		<property name="title" value="Descripcion del Italiano"/>
+		<property name="text" value="El italiano es el idioma mas bello del mundo pues oirlo es oir cantar." />
+		<property name="links">
+				<list>
+					<value>https://www.blablabla2.com</value>
+					<value>https://www.bliblebla2.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Italiano</value>
+					<value>Italia</value>
+				
+				</list>
+			</property>	
+		<property name="language" ref="Language1"/>	
+	</bean>	
+	
+	<bean id="DescriptionLanguage6" class="domain.Description">
+		<property name="title" value="Description of Italian"/>
+		<property name="text" value="Italian is the most beautiful language in the world is to hear it hear it sing." />
+		<property name="links">
+				<list>
+					<value>https://www.wawawa2.com</value>
+					<value>https://www.wawawa2.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Italian</value>
+										
+				</list>
+			</property>
+		<property name="language" ref="Language2"/>		
+	</bean>	
+	
+	<bean id="DescriptionLanguage7" class="domain.Description">
+		<property name="title" value="Descrizione di italiano"/>
+		<property name="text" value="L'italiano è la lingua più bella del mondo è di sentirlo sentirlo cantare." />
+		<property name="links">
+				<list>
+					<value>https://www.wawawa2.com</value>
+					<value>https://www.wawawa2.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>italiano</value>
+										
+				</list>
+			</property>
+		<property name="language" ref="Language3"/>		
+	</bean>	
+	
+	
+	<bean id="DescriptionLanguage8" class="domain.Description">
+		<property name="title" value="Descripcion de aleman"/>
+		<property name="text" value="El aleman es un idioma dificil de aprender pero con posibilidades amplias de trabajo." />
+		<property name="links">
+				<list>
+					<value>https://www.wawawa22.com</value>
+					<value>https://www.wawawa12.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>aleman</value>
+					<value>germano</value>
+										
+				</list>
+			</property>
+		<property name="language" ref="Language1"/>
+	</bean>	
+	
+	<bean id="DescriptionLanguage9" class="domain.Description">
+		<property name="title" value="Descripcion del Polaco"/>
+		<property name="text" value="El polaco es un idioma dificil de aprender y sin posibilidades amplias de trabajo." />
+		<property name="links">
+				<list>
+					<value>https://www.wawawa22.com</value>
+					<value>https://www.wawawa12.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>aleman</value>
+					<value>germano</value>
+										
+				</list>
+			</property>
+		<property name="language" ref="Language1"/>
+	</bean>	
+	
+	<!-- Fin de Descriptions de Language -->	
+	
+		<!--Descriptions de LanguageExchange-->
+		<bean id="DescriptionExchange1" class="domain.Description">
+		<property name="title" value="Hablemos en Sevilla"/>
+		<property name="text" value="Intercambio de idiomas en la ciudad hispalense, se podrá hablar ingles y español" />
+		<property name="links">
+				<list>
+					<value>https://www.blablablasevilla2.com</value>
+					<value>https://www.blibleblasevilla2.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Sevilla</value>
+					<value>Español-Ingles</value>
+				
+				</list>
+			</property>
+		<property name="language" ref="Language1"/>
+	</bean>	
+	
+	<bean id="DescriptionExchange2" class="domain.Description">
+		<property name="title" value="Let's talk in Seville"/>
+		<property name="text" value="Language Exchange in Seville , you can speak English and Spanish" />
+		<property name="links">
+				<list>
+					<value>https://www.blablablasevilla23.com</value>
+					<value>https://www.blibleblasevilla23.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Seville</value>
+					<value>Spanish-English</value>
+				
+				</list>
+			</property>
+		<property name="language" ref="Language2"/>		
+	</bean>	
+	
+		<bean id="DescriptionExchange3" class="domain.Description">
+		<property name="title" value="Hablemos en roma"/>
+		<property name="text" value="Intercambio en roma de tres idiomas, puedes hablar ingles, español e italiano" />
+		<property name="links">
+				<list>
+					<value>https://www.rome1.com</value>
+					<value>https://www.rome0.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>roma</value>
+					<value>español</value>
+					<value>ingles</value>
+					<value>italiano</value>
+				</list>
+			</property>
+		<property name="language" ref="Language1"/>		
+	</bean>	
+	
+		<bean id="DescriptionExchange4" class="domain.Description">
+		<property name="title" value="Let's talk in Rome"/>
+		<property name="text" value="Roma exchange in three languages, you can speak English, Spanish and Italian" />
+		<property name="links">
+				<list>
+					<value>https://www.roma23.com</value>
+					<value>https://www.rome22.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+						<value>rome</value>
+					<value>spanish</value>
+					<value>english</value>
+					<value>italian</value>
+				
+				</list>
+			</property>
+		<property name="language" ref="Language2"/>		
+	</bean>	
+	
+		<bean id="DescriptionExchange5" class="domain.Description">
+		<property name="title" value="Parliamo a Roma"/>
+		<property name="text" value="Scambio Roma in tre lingue, si può parlare inglese, spagnolo e italiano" />
+		<property name="links">
+				<list>
+					<value>https://www.blablablaroma23.com</value>
+					<value>https://www.blibleblaroma23.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+						<value>roma</value>
+					<value>spagnolo</value>
+					<value>inglese</value>
+					<value>italiano</value>
+				</list>
+			</property>
+		<property name="language" ref="Language3"/>		
+	</bean>	
+	
+	<bean id="DescriptionExchange6" class="domain.Description">
+		<property name="title" value="Hablemos en Londres"/>
+		<property name="text" value="Intercambio de idiomas en londres, donde podremos hablar ingles y español" />
+		<property name="links">
+				<list>
+					<value>https://www.londonwaty.com</value>
+					<value>https://www.londwhat.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Londres</value>
+					<value>Español-Ingles</value>
+				</list>
+			</property>	
+		<property name="language" ref="Language1"/>	
+	</bean>	
+	
+
+	<bean id="DescriptionExchange7" class="domain.Description">
+		<property name="title" value="Let's talk in London"/>
+		<property name="text" value="Language Exchange in London, where we can speak English and Spanish" />
+		<property name="links">
+				<list>
+					<value>https://www.londonpowa.com</value>
+					<value>https://www.londonping.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>London</value>
+					<value>Spanish-English</value>
+				</list>
+			</property>
+	<property name="language" ref="Language2"/>		
+	</bean>	
+	
+
+	
+
+	<bean id="DescriptionExchange8" class="domain.Description">
+		<property name="title" value="Let's talk in Milan"/>
+		<property name="text" value="Language Exchange in Milan where we can speak English and Italian" />
+		<property name="links">
+				<list>
+					<value>https://www.milan9.com</value>
+					<value>https://www.milanesa.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Milan</value>
+					<value>Italian-English</value>
+				</list>
+			</property>
+	<property name="language" ref="Language2"/>			
+	</bean>	
+	
+	<bean id="DescriptionExchange9" class="domain.Description">
+		<property name="title" value="Parliamo di Milano"/>
+		<property name="text" value="Scambio di Lingua a Milano Dove si può parlare Inglés e italiano" />
+		<property name="links">
+				<list>
+					<value>https://www.milan18.com</value>
+					<value>https://www.milan17.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Milano</value>
+					<value>Italiano-Inglese</value>
+				</list>
+			</property>
+		<property name="language" ref="Language3"/>		
+	</bean>	
+	
+		
+	<bean id="DescriptionExchange10" class="domain.Description">
+		<property name="title" value="Hablemos aleman en granada"/>
+		<property name="text" value="Un intercambio lingüistico en la bella ciudad de granada con la universidad femenina de munich" />
+		<property name="links">
+				<list>
+					<value>https://www.granada12.com</value>
+					<value>https://www.granada337.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Granada</value>
+					<value>Aleman-Español</value>
+				</list>
+			</property>
+		<property name="language" ref="Language1"/>		
+	</bean>	
+	
+	
+	
+	<!-- Fin de Descriptions de LanguageExchange -->	
+		
+				<!--JoinExchange-->	
+	<bean id="JoinExchange1" class="domain.JoinExchange">
+		<property name="polyglot" ref="polyglot1" />
+		<property name="LanguageExchange" ref="LanguageExchange1" />
+		
+	
+	</bean>
+	
+	<bean id="JoinExchange2" class="domain.JoinExchange">
+		<property name="polyglot" ref="polyglot2" />
+		<property name="LanguageExchange" ref="LanguageExchange1" />
+		
+	
+	</bean>
+	
+	<bean id="JoinExchange3" class="domain.JoinExchange">
+		<property name="polyglot" ref="polyglot2" />
+		<property name="LanguageExchange" ref="LanguageExchange2" />
+		
+	
+	</bean>
+	
+	<bean id="JoinExchange4" class="domain.JoinExchange">
+		<property name="polyglot" ref="polyglot3" />
+		<property name="LanguageExchange" ref="LanguageExchange2" />
+		
+	
+	</bean>
+	
+	<bean id="JoinExchange5" class="domain.JoinExchange">
+		<property name="polyglot" ref="polyglot4" />
+		<property name="LanguageExchange" ref="LanguageExchange2" />
+		
+	
+	</bean>
+	
+	<bean id="JoinExchange6" class="domain.JoinExchange">
+		<property name="polyglot" ref="polyglot2" />
+		<property name="LanguageExchange" ref="LanguageExchange3" />
+		
+	
+	</bean>
+	
+	<bean id="JoinExchange7" class="domain.JoinExchange">
+		<property name="polyglot" ref="polyglot3" />
+		<property name="LanguageExchange" ref="LanguageExchange3" />
+		
+	</bean>
+
+
+	<bean id="JoinExchange8" class="domain.JoinExchange">
+		<property name="polyglot" ref="polyglot3" />
+		<property name="LanguageExchange" ref="LanguageExchange4" />
+		
+	</bean>
+	
+	<bean id="JoinExchange9" class="domain.JoinExchange">
+		<property name="polyglot" ref="polyglot1" />
+		<property name="LanguageExchange" ref="LanguageExchange5" />
+		
+	</bean>
+	
+	<bean id="JoinExchange10" class="domain.JoinExchange">
+		<property name="polyglot" ref="polyglot2" />
+		<property name="LanguageExchange" ref="LanguageExchange5" />
+		
+	</bean>
+	
+		<!-- Fin de JoinExchange -->
+			<!--ExpectedTalk-->	
+	<bean id="ExpectedTalk1" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language1" />
+		<property name="LanguageExchange" ref="LanguageExchange1" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk2" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language2" />
+		<property name="LanguageExchange" ref="LanguageExchange1" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk3" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language1" />
+		<property name="LanguageExchange" ref="LanguageExchange2" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk4" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language2" />
+		<property name="LanguageExchange" ref="LanguageExchange2" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk5" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language3" />
+		<property name="LanguageExchange" ref="LanguageExchange2" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk6" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language1" />
+		<property name="LanguageExchange" ref="LanguageExchange3" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk7" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language2" />
+		<property name="LanguageExchange" ref="LanguageExchange3" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk8" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language2" />
+		<property name="LanguageExchange" ref="LanguageExchange4" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk9" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language3" />
+		<property name="LanguageExchange" ref="LanguageExchange4" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk10" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language4" />
+		<property name="LanguageExchange" ref="LanguageExchange5" />
+		
+	
+	</bean>
+	
+	<bean id="ExpectedTalk11" class="domain.ExpectedTalk">
+		<property name="Language" ref="Language1" />
+		<property name="LanguageExchange" ref="LanguageExchange5" />
+		
+	
+	</bean>
+	
+	
+		<!-- Fin de ExpectedTalk -->
+	
+	<!-- Inicio del 1.0b -->
+	
+		<!-- Inicio de los agent-->
+	<bean id="agent1" class="domain.Agent">
+		<property name="userAccount" ref="userAccount7"/>
+		<property name="name" value="Javier" />
+		<property name="surname" value="Gutierres" />
+		<property name="email" value="agent1@agents.com" />
+		<property name="phone" value="610683123" />
+		<property name="sponsorships">
+		
+		
+				<list>
+				<ref bean = "Sponsorship1" />
+				<ref bean = "Sponsorship2" />
+				</list>
+	
+		
+		</property>
+		   <property name="folders">
+	    <list>
+	      <ref bean="folder25" />
+	      <ref bean="folder26" />
+	      <ref bean="folder27" />
+	      <ref bean="folder28" />
+	    </list>
+	  </property>
+	</bean>	
+	
+	<bean id="agent2" class="domain.Agent">
+		<property name="userAccount" ref="userAccount8"/>
+		<property name="name" value="Eustaquio" />
+		<property name="surname" value="Hernandez" />
+		<property name="email" value="agent2@agents.com" />
+		<property name="phone" value="612223123" />
+		<property name="sponsorships">
+		
+		
+				<list>
+				<ref bean = "Sponsorship3" />
+				</list>
+	
+		
+		</property>
+		 <property name="folders">
+	    <list>
+	      <ref bean="folder29" />
+	      <ref bean="folder30" />
+	      <ref bean="folder31" />
+	      <ref bean="folder32" />
+	    </list>
+	  </property>
+	</bean>	
+	
+	<bean id="agent3" class="domain.Agent">
+		<property name="userAccount" ref="userAccount9"/>
+		<property name="name" value="Alfonso" />
+		<property name="surname" value="Castro" />
+		<property name="email" value="agent3@agents.com" />
+		<property name="phone" value="612223993" />
+		<property name="sponsorships">
+		
+		
+				<list>
+			
+				</list>
+	
+		
+		</property>
+		   <property name="folders">
+	    <list>
+	      <ref bean="folder33" />
+	      <ref bean="folder34" />
+	      <ref bean="folder35" />
+	      <ref bean="folder36" />
+	    </list>
+	  </property>
+	</bean>	
+		<!-- Fin de los agent-->
+		
+	
+	<!-- Folders -->	
+	<bean id="folder1" class="domain.Folder">
+		<property name="name" value="In box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="admin1" />
+		<property name="messages">
+		  <list>
+			<ref bean="message1" />
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder2" class="domain.Folder">
+		<property name="name" value="Out box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="admin1" />
+		<property name="messages">
+		  <list>
+			<ref bean="message4" />
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder3" class="domain.Folder">
+		<property name="name" value="Trash box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="admin1" />
+		<property name="messages">
+		  <list>
+			<ref bean="message5" />
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder4" class="domain.Folder">
+		<property name="name" value="Spam box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="admin1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	
+	<bean id="folder5" class="domain.Folder">
+		<property name="name" value="In box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user1" />
+		<property name="messages">
+		  <list>
+			<ref bean="message3" />
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder6" class="domain.Folder">
+		<property name="name" value="Out box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user1" />
+		<property name="messages">
+		  <list>
+			<ref bean="message2" />
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder7" class="domain.Folder">
+		<property name="name" value="Trash box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder8" class="domain.Folder">
+		<property name="name" value="Spam box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>
+	
+	<bean id="folder9" class="domain.Folder">
+		<property name="name" value="In box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user2" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder10" class="domain.Folder">
+		<property name="name" value="Out box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user2" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder11" class="domain.Folder">
+		<property name="name" value="Trash box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user2" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder12" class="domain.Folder">
+		<property name="name" value="Spam box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user2" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>
+	
+	<bean id="folder13" class="domain.Folder">
+		<property name="name" value="In box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user3" />
+		<property name="messages">
+		  <list>
+			<ref bean="message7" />
+			<ref bean="message8" />
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder14" class="domain.Folder">
+		<property name="name" value="Out box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user3" />
+		<property name="messages">
+		  <list>
+			<ref bean="message9" />
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder15" class="domain.Folder">
+		<property name="name" value="Trash box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user3" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder16" class="domain.Folder">
+		<property name="name" value="Spam box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user3" />
+		<property name="messages">
+		  <list>
+			<ref bean="message6" />
+		  </list>
+		</property>	
+	</bean>
+	
+	<bean id="folder17" class="domain.Folder">
+		<property name="name" value="In box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user4" />
+		<property name="messages">
+		  <list>
+			<ref bean="message10" />
+			<ref bean="message11" />
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder18" class="domain.Folder">
+		<property name="name" value="Out box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user4" />
+		<property name="messages">
+		  <list>
+			<ref bean="message12" />
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder19" class="domain.Folder">
+		<property name="name" value="Trash box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user4" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder20" class="domain.Folder">
+		<property name="name" value="Spam box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user4" />
+		<property name="messages">
+		  <list>
+			<ref bean="message13" />
+			<ref bean="message14" />
+			<ref bean="message15" />
+		  </list>
+		</property>	
+	</bean>
+	
+	<bean id="folder21" class="domain.Folder">
+		<property name="name" value="In box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user5" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder22" class="domain.Folder">
+		<property name="name" value="Out box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user5" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder23" class="domain.Folder">
+		<property name="name" value="Trash box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user5" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder24" class="domain.Folder">
+		<property name="name" value="Spam box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="user5" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>
+	
+	<bean id="folder25" class="domain.Folder">
+		<property name="name" value="In box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="auditor1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder26" class="domain.Folder">
+		<property name="name" value="Out box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="auditor1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder27" class="domain.Folder">
+		<property name="name" value="Trash box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="auditor1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder28" class="domain.Folder">
+		<property name="name" value="Spam box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="auditor1" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>
+	
+	<bean id="folder29" class="domain.Folder">
+		<property name="name" value="In box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="auditor2" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder30" class="domain.Folder">
+		<property name="name" value="Out box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="auditor2" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder31" class="domain.Folder">
+		<property name="name" value="Trash box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="auditor2" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder32" class="domain.Folder">
+		<property name="name" value="Spam box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="auditor2" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>
+	
+	<bean id="folder33" class="domain.Folder">
+		<property name="name" value="In box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="auditor3" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder34" class="domain.Folder">
+		<property name="name" value="Out box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="auditor3" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder35" class="domain.Folder">
+		<property name="name" value="Trash box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="auditor3" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>	
+	<bean id="folder36" class="domain.Folder">
+		<property name="name" value="Spam box" />
+		<property name="systemFolder" value="true" />
+		<property name="actor" ref="auditor3" />
+		<property name="messages">
+		  <list>
+		  </list>
+		</property>	
+	</bean>
+	
+		<!-- Fin de los folders -->
+		<!-- Inicio de los message -->
+				<!-- Messages -->
+	
+	<bean id="message1" class="domain.Message">
+	  <property name="subject" value="Hello" />
+	  <property name="body" value="Hey, what's up" />
+	  <property name="moment" value="03/04/2015 11:43" />
+	  <property name="spam" value="false" />
+	  <property name="priority" value="-1" />
+	  <property name="folder" ref="folder1"/>
+	  <property name="sender" ref="user1"/>
+	  <property name="recipient" ref="admin1"/>
+	</bean>
+	
+	<bean id="message2" class="domain.Message">
+	  <property name="subject" value="Hello" />
+	  <property name="body" value="Hey, what's up" />
+	  <property name="moment" value="03/04/2015 11:43" />
+	  <property name="spam" value="false" />
+	  <property name="priority" value="0" />
+	  <property name="folder" ref="folder6"/>
+	  <property name="sender" ref="user1"/>
+	  <property name="recipient" ref="user2"/>
+	</bean>
+	
+	<bean id="message3" class="domain.Message">
+	  <property name="subject" value="Hello 2" />
+	  <property name="body" value="Hey, what's up too" />
+	  <property name="moment" value="03/05/2015 12:00" />
+	  <property name="spam" value="false" />
+	  <property name="priority" value="1" />
+	  <property name="folder" ref="folder5"/>
+	  <property name="sender" ref="user2"/>
+	  <property name="recipient" ref="user1"/>
+	</bean>
+	
+	<bean id="message4" class="domain.Message">
+	  <property name="subject" value="Hello 2" />
+	  <property name="body" value="Hey, what's up too" />
+	  <property name="moment" value="03/05/2015 12:00" />
+	  <property name="spam" value="false" />
+	  <property name="priority" value="1" />
+	  <property name="folder" ref="folder2"/>
+	  <property name="sender" ref="admin1"/>
+	  <property name="recipient" ref="user3"/>
+	</bean>
+	
+	<bean id="message5" class="domain.Message">
+	  <property name="subject" value="Deleted Message 1" />
+	  <property name="body" value="Body of Deleted Message 1" />
+	  <property name="moment" value="11/11/2015 13:20" />
+	  <property name="spam" value="false" />
+	  <property name="priority" value="0" />
+	  <property name="folder" ref="folder3"/>
+	  <property name="sender" ref="admin1"/>
+	  <property name="recipient" ref="user3"/>
+	</bean>
+	
+	<bean id="message6" class="domain.Message">
+	  <property name="subject" value="Spam Message 1" />
+	  <property name="body" value="Body of SPam Message 1 Viagra" />
+	  <property name="moment" value="08/04/2015 13:11" />
+	  <property name="spam" value="true" />
+	  <property name="priority" value="0" />
+	  <property name="folder" ref="folder16"/>
+	  <property name="sender" ref="user3"/>
+	  <property name="recipient" ref="user2"/>
+	</bean>
+	
+	<bean id="message7" class="domain.Message">
+	  <property name="subject" value="New Message" />
+	  <property name="body" value="Body of New Message" />
+	  <property name="moment" value="01/01/2016 10:43" />
+	  <property name="spam" value="false" />
+	  <property name="priority" value="0" />
+	  <property name="folder" ref="folder13"/>
+	  <property name="sender" ref="user1"/>
+	  <property name="recipient" ref="user3"/>
+	</bean>
+	
+	<bean id="message8" class="domain.Message">
+	  <property name="subject" value="Message 8" />
+	  <property name="body" value="Body of Message 8" />
+	  <property name="moment" value="01/01/2016 10:46" />
+	  <property name="spam" value="false" />
+	  <property name="priority" value="0" />
+	  <property name="folder" ref="folder13"/>
+	  <property name="sender" ref="admin1"/>
+	  <property name="recipient" ref="user3"/>
+	</bean>
+	
+	<bean id="message9" class="domain.Message">
+	  <property name="subject" value="Message" />
+	  <property name="body" value="Body of Message" />
+	  <property name="moment" value="01/05/2015 19:00" />
+	  <property name="spam" value="false" />
+	  <property name="priority" value="0" />
+	  <property name="folder" ref="folder14"/>
+	  <property name="sender" ref="user3"/>
+	  <property name="recipient" ref="user1"/>
+	</bean>
+	
+	<bean id="message10" class="domain.Message">
+	  <property name="subject" value="Message" />
+	  <property name="body" value="Body of Message" />
+	  <property name="moment" value="01/05/2015 19:00" />
+	  <property name="spam" value="false" />
+	  <property name="priority" value="0" />
+	  <property name="folder" ref="folder17"/>
+	  <property name="sender" ref="user2"/>
+	  <property name="recipient" ref="user4"/>
+	</bean>
+	
+	<bean id="message11" class="domain.Message">
+	  <property name="subject" value="Message 10" />
+	  <property name="body" value="Body of Message 10" />
+	  <property name="moment" value="07/05/2015 19:56" />
+	  <property name="spam" value="false" />
+	  <property name="priority" value="0" />
+	  <property name="folder" ref="folder17"/>
+	  <property name="sender" ref="user1"/>
+	  <property name="recipient" ref="user4"/>
+	</bean>
+	
+	<bean id="message12" class="domain.Message">
+	  <property name="subject" value="New Message" />
+	  <property name="body" value="Body of New Message" />
+	  <property name="moment" value="01/01/2016 10:43" />
+	  <property name="spam" value="false" />
+	  <property name="priority" value="0" />
+	  <property name="folder" ref="folder18"/>
+	  <property name="sender" ref="user4"/>
+	  <property name="recipient" ref="user3"/>
+	</bean>
+	
+	<bean id="message13" class="domain.Message">
+	  <property name="subject" value="Spam Message 2 Cialis" />
+	  <property name="body" value="Body of SPam Message 2" />
+	  <property name="moment" value="05/04/2015 13:55" />
+	  <property name="spam" value="true" />
+	  <property name="priority" value="0" />
+	  <property name="folder" ref="folder20"/>
+	  <property name="sender" ref="user4"/>
+	  <property name="recipient" ref="admin1"/>
+	</bean>
+	
+	<bean id="message14" class="domain.Message">
+	  <property name="subject" value="Spam Message 3" />
+	  <property name="body" value="Body of SPam Message 3" />
+	  <property name="moment" value="05/04/2015 13:55" />
+	  <property name="spam" value="true" />
+	  <property name="priority" value="0" />
+	  <property name="folder" ref="folder20"/>
+	  <property name="sender" ref="user4"/>
+	  <property name="recipient" ref="user1"/>
+	</bean>
+	
+	<bean id="message15" class="domain.Message">
+	  <property name="subject" value="Spam Message 4" />
+	  <property name="body" value="Body of SPam Message 4" />
+	  <property name="moment" value="05/04/2015 13:56" />
+	  <property name="spam" value="true" />
+	<property name="priority" value="0" />
+
+	  <property name="folder" ref="folder20"/>
+	  <property name="sender" ref="user4"/>
+	  <property name="recipient" ref="user2"/>
+	</bean>
+	
+		
+		
+		<!-- Fin de los message -->
+			<!-- Inicio de los sponsorship-->
+	<bean id="Sponsorship1" class="domain.Sponsorship">
+		<property name="agent" ref="agent1" />
+		<property name="LanguageExchange" ref="LanguageExchange1" />
+		<property name="descriptions" >
+				<list>
+				<ref bean = "DescriptionSponsorship1" />
+				<ref bean = "DescriptionSponsorship2" />
+				<ref bean = "DescriptionSponsorship3" />
+				</list>
+		</property>
+		
+		<property name="Banners" >
+				<list>
+				<ref bean = "Banner1" />
+				<ref bean = "Banner2" />
+				<ref bean = "Banner3" />
+				</list>
+		</property>
+	
+	</bean>
+	
+	
+	
+	
+	<bean id="Sponsorship2" class="domain.Sponsorship">
+		<property name="agent" ref="agent1" />
+		<property name="LanguageExchange" ref="LanguageExchange1" />
+		<property name="descriptions" >
+				<list>
+				<ref bean = "DescriptionSponsorship4" />
+				<ref bean = "DescriptionSponsorship5" />
+				</list>
+		</property>
+		
+		<property name="Banners" >
+				<list>
+				<ref bean = "Banner4" />
+				<ref bean = "Banner5" />
+				</list>
+		</property>
+	
+	</bean>
+	
+	
+	<bean id="Sponsorship3" class="domain.Sponsorship">
+		<property name="agent" ref="agent2" />
+		<property name="LanguageExchange" ref="LanguageExchange1" />
+		<property name="descriptions" >
+				<list>
+
+				<ref bean = "DescriptionSponsorship6" />
+				</list>
+		</property>
+		
+		<property name="Banners" >
+				<list>
+				<ref bean = "Banner6" />
+				</list>
+		</property>
+	
+	</bean>
+	
+		
+	<bean id="Sponsorship4" class="domain.Sponsorship">
+		<property name="agent" ref="agent2" />
+		<property name="LanguageExchange" ref="LanguageExchange5" />
+		<property name="descriptions" >
+				<list>
+
+				<ref bean = "DescriptionSponsorship7" />
+				</list>
+		</property>
+		
+		<property name="Banners" >
+				<list>
+				<ref bean = "Banner7" />
+				</list>
+		</property>
+	
+	</bean>
+	
+		
+	<bean id="Sponsorship5" class="domain.Sponsorship">
+		<property name="agent" ref="agent2" />
+		<property name="LanguageExchange" ref="LanguageExchange3" />
+		<property name="descriptions" >
+				<list>
+
+				<ref bean = "DescriptionSponsorship8" />
+				</list>
+		</property>
+		
+		<property name="Banners" >
+				<list>
+				<ref bean = "Banner8" />
+				</list>
+		</property>
+	
+	</bean>
+	
+	
+		
+	<bean id="Sponsorship6" class="domain.Sponsorship">
+		<property name="agent" ref="agent2" />
+		<property name="LanguageExchange" ref="LanguageExchange3" />
+		<property name="descriptions" >
+				<list>
+
+				<ref bean = "DescriptionSponsorship9" />
+				</list>
+		</property>
+		
+		<property name="Banners" >
+				<list>
+				<ref bean = "Banner9" />
+				</list>
+		</property>
+	
+	</bean>
+	
+	
+		
+	<bean id="Sponsorship7" class="domain.Sponsorship">
+		<property name="agent" ref="agent2" />
+		<property name="LanguageExchange" ref="LanguageExchange3" />
+		<property name="descriptions" >
+				<list>
+
+				<ref bean = "DescriptionSponsorship10" />
+				</list>
+		</property>
+		
+		<property name="Banners" >
+				<list>
+				<ref bean = "Banner10" />
+				</list>
+		</property>
+	
+	</bean>
+	
+		<!-- Fin de los sponsorship-->
+			<!-- Inicio de las description de sponsorship-->
+			
+			
+		<bean id="DescriptionSponsorship1" class="domain.Description">
+		<property name="title" value="Academia Hola Mundo"/>
+		<property name="text" value="Academia de diferentes idiomas al mejor precio" />
+		<property name="links">
+				<list>
+					<value>https://www.granada12.com</value>
+					<value>https://www.granada337.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>academia</value>
+					<value>hello world</value>
+				</list>
+			</property>
+		<property name="language" ref="Language1"/>		
+	</bean>	
+	
+	
+		<bean id="DescriptionSponsorship2" class="domain.Description">
+		<property name="title" value="Hello World Academy"/>
+		<property name="text" value="Academy of different languages at the best price" />
+		<property name="links">
+				<list>
+					<value>https://www.granada12.com</value>
+					<value>https://www.granada337.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>academy</value>
+					<value>hello world</value>
+				</list>
+			</property>
+		<property name="language" ref="Language2"/>		
+	</bean>	
+	
+	
+		<bean id="DescriptionSponsorship3" class="domain.Description">
+		<property name="title" value="Hallo World Academy"/>
+		<property name="text" value="Akademie der verschiedenen Sprachen zum besten Preis" />
+		<property name="links">
+				<list>
+					<value>https://www.granada12.com</value>
+					<value>https://www.granada337.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>academy</value>
+					<value>Hallo World</value>
+				</list>
+			</property>
+		<property name="language" ref="Language4"/>		
+	</bean>	
+	
+	
+		<bean id="DescriptionSponsorship4" class="domain.Description">
+		<property name="title" value="Italien-Reise"/>
+		<property name="text" value="Reisen mit den Italienern!" />
+		<property name="links">
+				<list>
+					<value>https://www.rome222.com</value>
+					<value>https://www.milan337.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>Italien</value>
+					<value>reise</value>
+				</list>
+			</property>
+		<property name="language" ref="Language4"/>		
+	</bean>	
+	
+	
+		<bean id="DescriptionSponsorship5" class="domain.Description">
+		<property name="title" value="viaggi Italia"/>
+		<property name="text" value="in viaggio con gli italiani!" />
+		<property name="links">
+				<list>
+					<value>https://www.Milano.com</value>
+					<value>https://www.roma.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>italia</value>
+					<value>viaggi</value>
+				</list>
+			</property>
+		<property name="language" ref="Language3"/>		
+	</bean>	
+	
+	
+	<bean id="DescriptionSponsorship6" class="domain.Description">
+		<property name="title" value="Tomates la huerta"/>
+		<property name="text" value="Buen tomate de las mejores huertas" />
+		<property name="links">
+				<list>
+					<value>https://www.granada12.com</value>
+					<value>https://www.granada337.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>tomate</value>
+					<value>huerta</value>
+				</list>
+			</property>
+		<property name="language" ref="Language1"/>		
+	</bean>	
+	
+	<bean id="DescriptionSponsorship7" class="domain.Description">
+		<property name="title" value="Casa pepe"/>
+		<property name="text" value="Casa pepe patrocina este intercambio" />
+		<property name="links">
+				<list>
+					<value>https://www.granada12.com</value>
+					<value>https://www.granada337.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>pepe</value>
+					<value>casa</value>
+				</list>
+			</property>
+		<property name="language" ref="Language1"/>		
+	</bean>	
+	
+	<bean id="DescriptionSponsorship8" class="domain.Description">
+		<property name="title" value="Reise gunter"/>
+		<property name="text" value="Reisen gunter Sponsoren dieser" />
+		<property name="links">
+				<list>
+					<value>https://www.munich.com</value>
+					<value>https://www.Franfurkt.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>gunter</value>
+					<value>Deutsch</value>
+				</list>
+			</property>
+		<property name="language" ref="Language4"/>		
+	</bean>	
+	
+	<bean id="DescriptionSponsorship9" class="domain.Description">
+		<property name="title" value="maccheroni italiana"/>
+		<property name="text" value="maccheroni e formaggio sta sponsorizzando questo scambio" />
+		<property name="links">
+				<list>
+					<value>https://www.rome.com</value>
+					<value>https://www.milano.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>rome</value>
+					<value>milano</value>
+				</list>
+			</property>
+		<property name="language" ref="Language3"/>		
+	</bean>	
+	
+	<bean id="DescriptionSponsorship10" class="domain.Description">
+		<property name="title" value="Tv malaga"/>
+		<property name="text" value="la television de malaga patrocina esto" />
+		<property name="links">
+				<list>
+					<value>https://www.rome.com</value>
+					<value>https://www.milano.com</value>
+				</list>
+			</property>		
+		<property name="tag">
+				<list>
+					<value>rome</value>
+					<value>milano</value>
+				</list>
+			</property>
+		<property name="language" ref="Language1"/>		
+	</bean>	
+	
+	<!-- Fin de las description de sponsorship-->
+	
+	<!-- Inicio de los banner-->
+			
+			
+	<bean id="Banner1" class="domain.Banner">
+		<property name="img" value="https://www.Banner1Campaña1.com"/>
+		<property name="language" ref="Language1"/>		
+	</bean>	
+	
+				
+	<bean id="Banner2" class="domain.Banner">
+		<property name="img" value="https://www.Banner2Campaña1.com"/>
+		<property name="language" ref="Language2"/>		
+	</bean>	
+	
+				
+	<bean id="Banner3" class="domain.Banner">
+		<property name="img" value="https://www.Banner3Campaña1.com"/>
+		<property name="language" ref="Language4"/>		
+	</bean>	
+	
+				
+	<bean id="Banner4" class="domain.Banner">
+		<property name="img" value="https://www.Banner4Campaña2.com"/>
+		<property name="language" ref="Language1"/>		
+	</bean>	
+	
+				
+	<bean id="Banner5" class="domain.Banner">
+		<property name="img" value="https://www.Banner5Campaña2.com"/>
+		<property name="language" ref="Language3"/>		
+	</bean>	
+	
+				
+	<bean id="Banner6" class="domain.Banner">
+		<property name="img" value="https://www.Banner6Campaña3.com"/>	
+		<property name="language" ref="Language4"/>		
+	</bean>	
+	
+	<bean id="Banner7" class="domain.Banner">
+		<property name="img" value="https://www.Banner7Campaña4.com"/>	
+		<property name="language" ref="Language2"/>		
+	</bean>	
+	
+	<bean id="Banner8" class="domain.Banner">
+		<property name="img" value="https://www.Banner8Campaña5.com"/>	
+		<property name="language" ref="Language3"/>		
+	</bean>	
+	
+	<bean id="Banner9" class="domain.Banner">
+		<property name="img" value="https://www.Banner9Campaña6.com"/>	
+		<property name="language" ref="Language2"/>		
+	</bean>	
+	
+	<bean id="Banner10" class="domain.Banner">
+		<property name="img" value="https://www.Banner10Campaña7.com"/>	
+		<property name="language" ref="Language1"/>		
+	</bean>	
+		<!-- Fin de los banner-->
+				
+</beans>

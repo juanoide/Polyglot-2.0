@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+
+<!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 2.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_2_0.dtd">
+       
+<tiles-definitions>
+
+
+	<definition name="language/admin/register" extends="master.page">	
+		<put-attribute name="title" value="Language Register" />
+		<put-attribute name="body" value="/views/language/register.jsp" />
+	</definition>
+	
+	<definition name="language/admin/list" extends="master.page">	
+		<put-attribute name="title" value="Language list" />
+		<put-attribute name="body" value="/views/language/list.jsp" />
+	</definition>
+	
+	<definition name="language/admin/electionLanguage" extends="master.page">	
+		<put-attribute name="title" value="Choose your language" />
+		<put-attribute name="body" value="/views/language/electionLanguage.jsp" />
+	</definition>
+	
+	<definition name="language/admin/addDescription" extends="master.page">	
+		<put-attribute name="title" value="Add Description" />
+		<put-attribute name="body" value="/views/language/addDescription.jsp" />
+	</definition>
+	
+	
+	<definition name="language/admin/edit" extends="master.page">	
+		<put-attribute name="title" value="Edit language" />
+		<put-attribute name="body" value="/views/language/edit.jsp" />
+	</definition>
+	
+	
+</tiles-definitions>
